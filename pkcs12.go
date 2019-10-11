@@ -230,9 +230,9 @@ func DecodeAll(pfxData []byte, password string) (privateKey interface{}, certifi
 	for _, bag := range bags {
 		switch {
 		case bag.Id.Equal(oidCertBag):
-			if certificate != nil {
-				err = errors.New("pkcs12: expected exactly one certificate bag")
-			}
+// 			if certificate != nil {
+// 				err = errors.New("pkcs12: expected exactly one certificate bag")
+// 			}
 
 			certsData, err := decodeCertBag(bag.Value.Bytes)
 			if err != nil {
